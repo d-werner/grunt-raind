@@ -1,0 +1,8 @@
+{
+  "name": "grunt-restart-raind",
+  "version": "1.0.0",
+
+  "peerDependencies": {
+    "grunt" : "0.4.x"
+  }
+}
