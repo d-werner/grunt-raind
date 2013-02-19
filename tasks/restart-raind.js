@@ -1,9 +1,6 @@
 module.exports = function(grunt) {
 
   var fs = require('fs');
-//    , exec = require('child_process').exec
-//    , spawn = require('child_process').spawn;
-
 
   // -- CONFIG -------------------------------------------------------------------------------------------------------//
 
@@ -88,56 +85,5 @@ module.exports = function(grunt) {
     var today = new Date();
     return today.getFullYear() + "." + (today.getMonth()+1) + "." + today.getDate() + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() + " ";
   }
-
-
-//  function start(callback) {
-//    var cdProc = spawn("cd", [rootPath])
-//      , out = fs.openSync(logFile, 'a')
-//      , err = fs.openSync(logFile, 'a');
-//
-//    cdProc.stderr.on('data', function (data) {
-//      grunt.log.error(data);
-//    });
-//
-//    cdProc.on("exit", function(code) {
-//      if(code) {
-//        onCdExit();
-//      }
-//    });
-//
-//    function onCdExit() {
-//      var raindProc = spawn("raind", [], {
-//        detached : true,
-//        stdio: [ "ignore", out, err ]
-//      });
-//      raindProc.unref();
-//
-//      callback(raindProc.pid);
-//    }
-//  }
-//
-//  function kill(callback) {
-//    grunt.log.debug("kill");
-//
-//    exec("ps aux | grep raind", function(error, stdout, stderr) {
-//      grunt.log.debug(stdout);
-//      var pids = stdout.split("\n").map(function(line) {
-//        var match = line.match(/\d+/);
-//        return match ? match[0] : null;
-//      });
-//
-//      pids.forEach(function(pid) {
-//        if ( pid && pid != process.pid ) {
-//          grunt.log.debug(_getDateString() + "kill", pid);
-//
-//          try {
-//            process.kill(pid);
-//          } catch(error) { }
-//        }
-//      });
-//
-//      callback();
-//    });
-//  }
 
 };
