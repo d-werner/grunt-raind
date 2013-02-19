@@ -4,11 +4,17 @@ module.exports = function(grunt) {
 
   // -- CONFIG -------------------------------------------------------------------------------------------------------//
 
-  // The file where the process ID of the runnin raind process is stored.
-  // Gets created if it does not exist already.
+  // Hard coded file config to enforce the convention ;-)
+
+  /**
+   * The file where the process ID of the runnin raind process is stored.
+   * Gets created if it does not exist already.
+   */
   var processFile = ".rain";
 
-  // The log file containing raind's stdout and stderr output.
+  /**
+   * The log file containing raind's stdout and stderr output.
+   */
   var logFile = "raind.log";
 
   // -- TASKS --------------------------------------------------------------------------------------------------------//
