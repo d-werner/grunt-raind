@@ -7,7 +7,7 @@ module.exports = function(grunt) {
   // Hard coded file config to enforce the convention ;-)
   var config = {
     /**
-     * The file where the process ID of the runnin raind process is stored.
+     * The file where the process ID of the running raind process is stored.
      * Gets created if it does not exist already.
      */
     processFile : ".rain",
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
       }, function(){});
 
       _setPid(raindSpawn.pid);
-      grunt.log.writeln("Started raind, pid " + raindSpawn.pid +", " +_getDateString());
+      grunt.log.writeln("Started raind, pid " + raindSpawn.pid +", " +_getTimestamp());
     } catch(ex) {
       grunt.log.error().error(ex);
     }
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
       if(processId) {
         process.kill(processId);
         _setPid("");
-        grunt.log.writeln("Terminated raind, pid " + processId +", " +_getDateString());
+        grunt.log.writeln("Terminated raind, pid " + processId +", " +_getTimestamp());
       }
     } catch(ex) {
       if(ex.code === "ESRCH") {
@@ -94,9 +94,9 @@ module.exports = function(grunt) {
     }
   }
 
-  function _getDateString() {
-    var today = new Date();
-    return today.getFullYear() + "." + (today.getMonth()+1) + "." + today.getDate() + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() + " ";
+  function _getTimestamp() {
+    var date = new Date();
+    return date.getFullYear() + "." + (date.getMonth()+1) + "." + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " ";
   }
 
 };
