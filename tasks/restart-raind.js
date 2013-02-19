@@ -13,11 +13,11 @@ module.exports = function(grunt) {
 
   // -- TASKS --------------------------------------------------------------------------------------------------------//
 
-  grunt.registerTask('kill-raind', 'Terminates the RAIN daemon', function() {
+  grunt.registerTask('stop-raind', 'Terminates the RAIN daemon', function() {
     kill();
   });
 
-  grunt.registerTask('restart-raind', 'Restarts the RAIN daemon', function() {
+  grunt.registerTask('restart-raind', '(Re)starts the RAIN daemon', function() {
     restart();
   });
 
