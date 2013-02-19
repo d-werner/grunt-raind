@@ -23,15 +23,16 @@ module.exports = function(grunt) {
 
   function start() {
     var out = fs.openSync(logFile, 'a')
-      , err = fs.openSync(logFile, 'a')
-      , raindSpawn = grunt.util.spawn({
+      , err = fs.openSync(logFile, 'a');
+
+    try {
+      var raindSpawn = grunt.util.spawn({
         cmd : "raind",
         opts : {
           stdio: [ "ignore", out, err ]
         }
-      });
+      }, function(){});
 
-    try {
       _setPid(raindSpawn.pid);
       grunt.log.writeln("Started raind, pid " + raindSpawn.pid +", " +_getDateString());
     } catch(ex) {
