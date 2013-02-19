@@ -49,7 +49,11 @@ module.exports = function(grunt) {
         grunt.log.writeln("Terminated raind, pid " + processId +", " +_getDateString());
       }
     } catch(ex) {
-      grunt.log.error().error(ex);
+      if(ex.code === "ESRCH") {
+        grunt.log.debug("Previous raind process terminated before already.")
+      } else {
+        grunt.log.error().error(ex);
+      }
     }
   }
 
