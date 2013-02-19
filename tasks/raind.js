@@ -5,17 +5,19 @@ module.exports = function(grunt) {
   // -- CONFIG -------------------------------------------------------------------------------------------------------//
 
   // Hard coded file config to enforce the convention ;-)
+  var config = {
+    /**
+     * The file where the process ID of the runnin raind process is stored.
+     * Gets created if it does not exist already.
+     */
+    processFile : ".rain",
 
-  /**
-   * The file where the process ID of the runnin raind process is stored.
-   * Gets created if it does not exist already.
-   */
-  var processFile = ".rain";
+    /**
+     * The log file containing raind's stdout and stderr output.
+     */
+    logFile : "raind.log"
+  };
 
-  /**
-   * The log file containing raind's stdout and stderr output.
-   */
-  var logFile = "raind.log";
 
   // -- TASKS --------------------------------------------------------------------------------------------------------//
 
@@ -28,8 +30,8 @@ module.exports = function(grunt) {
   });
 
   function start() {
-    var out = fs.openSync(logFile, 'a')
-      , err = fs.openSync(logFile, 'a');
+    var out = fs.openSync(config.logFile, 'a')
+      , err = fs.openSync(config.logFile, 'a');
 
     try {
       var raindSpawn = grunt.util.spawn({
@@ -73,7 +75,7 @@ module.exports = function(grunt) {
 
   function _getPid() {
     try {
-      return fs.readFileSync(processFile, 'utf8');
+      return fs.readFileSync(config.processFile, 'utf8');
     } catch(ex) {
       if(ex.code === "ENOENT") {
         _setPid("");
@@ -86,7 +88,7 @@ module.exports = function(grunt) {
 
   function _setPid(pid) {
     try {
-      fs.writeFileSync(processFile, pid, 'utf8');
+      fs.writeFileSync(config.processFile, pid, 'utf8');
     } catch(ex) {
       grunt.fail.warn(ex);
     }
