@@ -53,7 +53,8 @@ grunt.loadTasks("node_modules/grunt-raind/tasks");
 1. As you want the RAIN server to be up and running immediately, you need to register a combined task that first executes `raind-restart` to start the server and calls the previously setup watch task afterwards.
 
 ```js
-grunt.registerTask("raind", ["raind-restart", "watch:raind"]);```
+grunt.registerTask("raind", ["raind-restart", "watch:raind"]);
+```
 
 
 ## Usage
