@@ -33,14 +33,14 @@ The easiest way would be to copy this [example Gruntfile](https://github.com/d-w
 
 Alternatively you can create or adapt your Gruntfile like this:
 
-1. Enable the plugins with these lines of Code:
+* Enable the plugins with these lines of Code:
 
 ```js
 grunt.loadTasks("node_modules/grunt-contrib-watch/tasks");
 grunt.loadTasks("node_modules/grunt-raind/tasks");
 ```
 
-2. Setup a watch task that executes task `raind-restart` and watches for file changes in your components' CSS and template directories.
+* Setup a watch task that executes task `raind-restart` and watches for file changes in your components' CSS and template directories.
 
 ```js
  watch : {
@@ -50,7 +50,7 @@ grunt.loadTasks("node_modules/grunt-raind/tasks");
     }
   }
 ```
-3. As you want the RAIN server to be up and running immediately, you need to register a combined task that first executes `raind-restart` to start the server and calls the previously setup watch task afterwards.
+* As you want the RAIN server to be up and running immediately, you need to register a combined task that first executes `raind-restart` to start the server and calls the previously setup watch task afterwards.
 
 ```js
 grunt.registerTask("raind", ["raind-restart", "watch:raind"]);
