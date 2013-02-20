@@ -29,7 +29,9 @@ npm install
 
 ### Configuring Grunt
 
-Create a Gruntfile in your project root directory and enable the plugins with these lines of Code:
+The easiest way would be to copy this [example Gruntfile](https://github.com/d-werner/grunt-raind/blob/master/watch_example/Gruntfile.js) in your project root directory or merge it with your existing Gruntfile.
+
+Alternatively you can create or adapt your Gruntfile in your project root directory and enable the plugins with these lines of Code:
 
 ```js
 grunt.loadTasks("node_modules/grunt-contrib-watch/tasks");
@@ -38,46 +40,11 @@ grunt.loadTasks("node_modules/grunt-raind/tasks");
 
 Setup a watch task that executes task `raind-restart` and watches for file changes in your components' CSS and template directories.
 As we want the RAIN server to be up and running immediately, we need a combined task that first executes `raind-restart` to start the server and calling our new watch task afterwards.
-This task is registered as `raind` in the following example.
-
-Example:
-```js
-module.exports = function(grunt) {
-
-  grunt.config.init({
-
-    pkg : grunt.file.readJSON('package.json'),
-
-    meta : {
-      banner : "/*! <%= pkg.id %> - v<%= pkg.version %> - " + "<%= grunt.template.today('yyyy-mm-dd') %>*/\n\n"
-    },
-
-    files : {
-      css : "components/**/client/css/**/*.css",
-      template : "components/**/client/templates/**/*.html"
-    },
-
-    watch : {
-      raind : {
-        files : [ "<%= files.css %>", "<%= files.template %>" ],
-        tasks : "raind-restart"
-      }
-    }
-  });
-
-  grunt.registerTask("raind", ["raind-restart", "watch:raind"]);
-
-  grunt.loadTasks("node_modules/grunt-contrib-watch/tasks");
-  grunt.loadTasks("node_modules/grunt-raind/tasks");
-};
-```
-
-This [example](https://github.com/d-werner/grunt-raind/blob/master/watch_example/Gruntfile.js) will be checked-out with the rain plugin.
 
 ## Usage
 
-Call Grunt with the task starting the RAIN server and the watch task in your project root directory.
-According to the previous example, the command would be:
+Call Grunt with the combined task starting the RAIN server and the watch task in your project root directory.
+According to the [example Gruntfile](https://github.com/d-werner/grunt-raind/blob/master/watch_example/Gruntfile.js), this command would be:
 
 ```shell
 grunt raind
