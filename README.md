@@ -4,7 +4,7 @@ grunt-raind
 > Automatically restarts the [RAIN](https://github.com/rainjs/rainjs) server if CSS and templates are changed.
 > To be used as watch task in conjunction with [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch).
 
-## Getting Started (for RAIN developers)
+## Getting started (for RAIN developers)
 This plugin requires Grunt `~0.4.0` and plugin grunt-contrib-watch to be used meaningfully.
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins.
@@ -33,7 +33,7 @@ The easiest way would be to copy this [example Gruntfile](https://github.com/d-w
 
 Alternatively you can create or adapt your Gruntfile like this:
 
-* Enable the plugins with these lines of Code:
+* Enable the plugins with these lines of code:
 
 ```js
 grunt.loadTasks("node_modules/grunt-contrib-watch/tasks");
@@ -66,7 +66,7 @@ According to the [example Gruntfile](https://github.com/d-werner/grunt-raind/blo
 grunt raind
 ```
 
-Terminating the grunt process will also terminate the RAIN server.
+Terminating the watch process will also terminate the RAIN server.
 
 ## Server logs
 
