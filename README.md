@@ -31,15 +31,18 @@ npm install
 
 The easiest way would be to copy this [example Gruntfile](https://github.com/d-werner/grunt-raind/blob/master/watch_example/Gruntfile.js) in your project root directory or merge it with your existing Gruntfile.
 
-Alternatively you can create or adapt your Gruntfile in your project root directory and enable the plugins with these lines of Code:
+Alternatively you can create or adapt your Gruntfile like this:
+
+1. Enable the plugins with these lines of Code:
 
 ```js
 grunt.loadTasks("node_modules/grunt-contrib-watch/tasks");
 grunt.loadTasks("node_modules/grunt-raind/tasks");
 ```
 
-Setup a watch task that executes task `raind-restart` and watches for file changes in your components' CSS and template directories.
-As we want the RAIN server to be up and running immediately, we need a combined task that first executes `raind-restart` to start the server and calling our new watch task afterwards.
+1. Setup a watch task that executes task `raind-restart` and watches for file changes in your components' CSS and template directories.
+
+1. As you want the RAIN server to be up and running immediately, you need to register a combined task that first executes `raind-restart` to start the server and calls the previously setup watch task afterwards.
 
 ## Usage
 
