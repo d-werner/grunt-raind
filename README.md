@@ -36,8 +36,8 @@ Alternatively you can create or adapt your Gruntfile like this:
 * Enable the plugins with these lines of code:
 
 ```js
-grunt.loadTasks("node_modules/grunt-contrib-watch/tasks");
-grunt.loadTasks("node_modules/grunt-raind/tasks");
+grunt.loadNpmTasks("grunt-contrib-watch");
+grunt.loadNpmTasks("grunt-raind");
 ```
 
 * Setup a watch task that executes task `raind-restart` and watches for file changes in your components' CSS and template directories.
