@@ -40,7 +40,7 @@ grunt.loadTasks("node_modules/grunt-contrib-watch/tasks");
 grunt.loadTasks("node_modules/grunt-raind/tasks");
 ```
 
-1. Setup a watch task that executes task `raind-restart` and watches for file changes in your components' CSS and template directories.
+2. Setup a watch task that executes task `raind-restart` and watches for file changes in your components' CSS and template directories.
 
 ```js
  watch : {
@@ -50,7 +50,7 @@ grunt.loadTasks("node_modules/grunt-raind/tasks");
     }
   }
 ```
-1. As you want the RAIN server to be up and running immediately, you need to register a combined task that first executes `raind-restart` to start the server and calls the previously setup watch task afterwards.
+3. As you want the RAIN server to be up and running immediately, you need to register a combined task that first executes `raind-restart` to start the server and calls the previously setup watch task afterwards.
 
 ```js
 grunt.registerTask("raind", ["raind-restart", "watch:raind"]);
