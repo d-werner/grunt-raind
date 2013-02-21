@@ -10,7 +10,6 @@ module.exports = function(grunt) {
 
     files : {
       css : "components/**/client/css/**/*.css",
-      less : "components/**/client/css/**/*.less",
       template : "components/**/client/templates/**/*.html"
     },
 
