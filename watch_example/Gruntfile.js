@@ -10,12 +10,13 @@ module.exports = function(grunt) {
 
     files : {
       css : "components/**/client/css/**/*.css",
+      less : "components/**/client/css/**/*.less",
       template : "components/**/client/templates/**/*.html"
     },
 
     watch : {
       raind : {
-        files : [ "<%= files.css %>", "<%= files.template %>" ],
+        files : [ "<%= files.css %>", "<%= files.less %>", "<%= files.template %>" ],
         tasks : "raind-restart"
       }
     }
