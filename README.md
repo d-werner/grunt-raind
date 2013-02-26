@@ -1,7 +1,7 @@
 grunt-raind
 ===================
 
-> Automatically restarts the [RAIN](https://github.com/rainjs/rainjs) server if CSS and templates are changed.
+> Automatically restarts the [RAIN](https://github.com/rainjs/rainjs) server if CSS, templates or server scripts are changed.
 > To be used as watch task in conjunction with [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch).
 
 ## Getting started (for RAIN developers)
@@ -40,12 +40,12 @@ grunt.loadNpmTasks("grunt-contrib-watch");
 grunt.loadNpmTasks("grunt-raind");
 ```
 
-* Setup a watch task that executes task `raind-restart` and watches for file changes in your components' CSS and template directories.
+* Setup a watch task that executes task `raind-restart` and watches for file changes in your components' CSS, template and server directories.
 
 ```js
  watch : {
     raind : {
-      files : [ "<%= files.css %>", "<%= files.template %>" ],
+      files : [ "components/**/client/css/**/*.css", "components/**/client/templates/**/*.html", "components/**/server/**/*.js" ],
       tasks : "raind-restart"
     }
   }
