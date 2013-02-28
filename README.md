@@ -45,7 +45,7 @@ grunt.loadNpmTasks("grunt-raind");
 ```js
  watch : {
     raind : {
-      files : [ "components/**/client/css/**/*.css", "components/**/client/templates/**/*.html", "components/**/server/**/*.js" ],
+      files : [ "components/**/client/css/**/*.css", "components/**/client/templates/**/*.html", "components/**/server/**/*.js", "conf/*.conf" ],
       tasks : "raind-restart"
     }
   }
