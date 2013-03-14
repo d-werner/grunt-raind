@@ -25,6 +25,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask("raind", ["raind-restart", "watch:raind"]);
 
-  grunt.loadTasks("node_modules/grunt-contrib-watch/tasks");
-  grunt.loadTasks("node_modules/grunt-raind/tasks");
+  grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-raind");
 };
